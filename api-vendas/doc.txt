@@ -1,4 +1,6 @@
 create container = docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 // download dbeaver and create postgres database apivendas with password "docker"
+docker ps (listar)
+docker start postgres (qd n tiver rodando)
 create migration = npm run typeorm migration:create -n CreateProducts
 npm run typeorm migration:run
