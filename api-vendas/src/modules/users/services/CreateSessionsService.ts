@@ -11,7 +11,7 @@ interface IRequest {
 }
 
 export default class CreateSessionsService {
-  public async execute ({ email, password}: IRequest): Promise<User> {
+  public async execute ({ email, password }: IRequest): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository)
     const user = await usersRepository.findByEmail(email)
 
