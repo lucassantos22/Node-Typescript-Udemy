@@ -3,7 +3,7 @@ import { getCustomRepository } from "typeorm";
 import AppError from "@shared/errors/AppError";
 import User from "../typeorm/entities/User";
 import UsersRepository from "../typeorm/repositories/UserRepository";
-import { compare, hash } from "bcryptjs";
+import { compare } from "bcryptjs";
 
 interface IRequest {
   email: string;
