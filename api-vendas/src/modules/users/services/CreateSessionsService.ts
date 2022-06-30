@@ -5,6 +5,7 @@ import { sign } from "jsonwebtoken";
 import AppError from "@shared/errors/AppError";
 import User from "../typeorm/entities/User";
 import UsersRepository from "../typeorm/repositories/UserRepository";
+import authConfig from '@config/auth'
 
 interface IRequest {
   email: string;
@@ -33,10 +34,10 @@ export default class CreateSessionsService {
 
     const token = sign(
       {},
-      '5f40c23e852fa561d9923baa05990976',
+      authConfig.jwt.secret,
       {
         subject: user.id,
-        expiresIn: '1d'
+        expiresIn: authConfig.jwt.expiresIn
       }
     )
 
